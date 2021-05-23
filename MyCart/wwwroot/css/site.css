@@ -70,3 +70,21 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+.cart{
+
+    max-width:20px;
+    max-height:20px;
+}
+
+.carousel-inner{width:60%;
+
+
+}
+
+.Productimages{
+
+background-color:lightslategray;
+max-height:800px;
+max-width:600px;
+min-height:400px;
+}

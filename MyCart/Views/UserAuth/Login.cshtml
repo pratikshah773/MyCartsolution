@@ -1,0 +1,33 @@
+﻿@model MyCart_ClientLayer.Models.User
+
+
+
+    <h1>Welcome to MyCart</h1>
+    <p>Please Login to continue </p>
+
+
+    <form action="/Login" method="post">
+
+        <table>
+            <tr>
+
+                <td> @Html.DisplayNameFor(model => model.UserName)</td>
+                <td><input type="text" name="Email" value="" placeholder="Type Email" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="Password" value="" placeholder="Type Password" /></td>
+            </tr>
+
+            <tr>
+                <button type="submit">Login</button>
+                <button @Html.ActionLink("Register", "Register", "UserAuth")>Register here </button>
+
+            </tr>
+        </table>
+
+       
+
+        @ViewBag.Email=model.UserName
+    
+    </form>

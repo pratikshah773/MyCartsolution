@@ -16,5 +16,9 @@ namespace MyCart_ClientLayer.Models
 
         public string ProductCategory { get; set; }
 
+        public string ProductImagePath { get; set; }
+
+        public int ProductQuantity { get; set; }
+
     }
 }

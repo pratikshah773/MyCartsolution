@@ -21,7 +21,7 @@ namespace MyCart_ClientLayer.Controllers
         {
             IEnumerable<Product> listofProducts  = _prod.viewProducts();
 
-            return View(listofProducts);
+            return View("ProductCards", listofProducts);
         }
 
         // GET: product/Details/5
@@ -31,6 +31,14 @@ namespace MyCart_ClientLayer.Controllers
             return View(productById);
         }
 
-       
+        public IActionResult ProductCards()
+        {
+            IEnumerable<Product> listofProducts = _prod.viewProducts();
+
+            return View(listofProducts);
+
+            
+        
+        }
     }
 }

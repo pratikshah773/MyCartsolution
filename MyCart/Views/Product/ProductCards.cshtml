@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MyCart_ClientLayer.Models.Product>
+
+@{
+
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+
+    <div class   ="card" style="width: 18rem; display:inline-flex ; border-color:cornsilk;" >
+        <img class="Productimages" src=@item.ProductImagePath class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2 class="card">@item.ProductName</h2>
+            <h4>Price: @item.productPrice</h4>
+            
+
+
+            <p class="card-text">Grocery items type</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-secondary">Add to Cart</a>
+        </div>
+    </div>
+
+}

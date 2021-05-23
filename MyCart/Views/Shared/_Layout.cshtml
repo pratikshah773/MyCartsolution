@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title class="custom32">@ViewData["Title"] - MyCart</title>
-    <link rel="stylesheet" href="~/css/styleSheet.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
 
@@ -45,17 +45,21 @@
                     </li>
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <div >
+                    
+                    <button asp-controller="UserAuth" asp-action="Login">Login</button>
+                    <button><span id="OrderQuantity" class="badge badge-light">1</span><img class="cart" src="~/images/cartIconresized.jpg" alt="CartPicture"> Cart</button>
+                    @*<button type="button" class="btn btn-primary"<img class="cart" src="~/images/cartIconresized.jpg" alt="CartPicture" >*@
+                       @*<span class="badge badge-light">4</span>*@
+                    </button>
+
+                </div>
             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
 
-        <pm class="custom32"> custom css</pm>
             @RenderBody()
         </main>
     </div>
