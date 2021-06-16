@@ -1,2 +1,30 @@
 ﻿
+@model MyCart_ClientLayer.Models.User
+
 <h1>Welcome to register Page</h1>
+
+<form action="Register" method="post">
+
+    <table>
+        <tr>
+
+            <td> @Html.DisplayNameFor(model => model.UserName)</td>
+            <td><input type="text" name="UserName" value="" placeholder="Type UserName" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="Password" value="" placeholder="Type Password" /></td>
+        </tr>
+
+        <tr>
+            <button class="btn btn-block" type="submit">Register</button>
+
+
+        </tr>
+    </table>
+
+
+
+
+
+</form>

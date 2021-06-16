@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyCart.Models;
 using System;
@@ -15,7 +16,11 @@ namespace MyCart.Controllers
 
         public ActionResult Index()
         {
+
+           
+            
             return View();
+            
 
             
         }

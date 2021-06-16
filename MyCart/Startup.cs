@@ -5,11 +5,14 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyCart_ClientLayer.Data;
 using MyCart_ClientLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MyCart
 {
@@ -26,6 +29,12 @@ namespace MyCart
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddControllersWithViews();
+           
+
+            services.AddDbContextPool<Datacontext>(options => options.UseSqlServer("Server=.; Database=MyCart; Trusted_Connection=True;"));
+            
+            services.AddSession(options => options.IdleTimeout = TimeSpan.FromMinutes(1));
+            services.AddMvc();
             services.AddAuthentication(options =>
             {
                 
@@ -35,8 +44,14 @@ namespace MyCart
             })
                 .AddCookie();
 
-            services.AddSingleton<Iproduct, productRepo>();
+            
 
+            services.AddSingleton<Iproduct, productRepo>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            //services.AddScoped<Datacontext, Datacontext>();
+
+
+            
             services.AddControllersWithViews();
         }
 
@@ -53,9 +68,9 @@ namespace MyCart
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 
             }
-           
-          
-           
+
+
+            app.UseSession();
             app.UseStaticFiles();
             
             app.UseRouting();

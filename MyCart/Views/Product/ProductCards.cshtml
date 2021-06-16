@@ -15,12 +15,17 @@
         <div class="card-body">
             <h2 class="card">@item.ProductName</h2>
             <h4>Price: @item.productPrice</h4>
-            
+
 
 
             <p class="card-text">Grocery items type</p>
-            <a href="#" class="btn btn-primary">Buy Now</a>
-            <a href="#" class="btn btn-secondary">Add to Cart</a>
+            @*<a href="#" class="btn btn-primary">Buy Now</a>
+        <a href="#" class="btn btn-secondary">Add to Cart</a>*@
+            @Html.ActionLink("Buy Now", "Index", new { item.productId })
+
+            <a href="#"  class="BuyNow" class="btn btn-secondary">Add to Cart</a>
+
+
         </div>
     </div>
 

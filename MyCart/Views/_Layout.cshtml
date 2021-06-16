@@ -13,15 +13,7 @@
 </head>
 
 <body>
-    @*TO USE SESSION USING using Microsoft.AspNetCore.Http*@
-
     @using Microsoft.AspNetCore.Http
-    @inject IHttpContextAccessor HttpContextAccessor
-    <script>
-   var isFiltered = '@HttpContextAccessor.HttpContext.Session.GetString("username")';
-   alert(isFiltered);
-    </script>
-
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,12 +48,9 @@
 
                 </ul>
                 <div>
-
-
-
-                    @{ if (HttpContextAccessor.HttpContext.Session.GetString("username") != null)
+                    @{ if (Context.Session.GetString("username") != null)
                         {
-                            <span>Context.Session.GetString("username")</span>
+                            <span>Hi @Context.Session.GetString("username")</span>
                             <button id="loginbutton" style="visibility:hidden;">Login</button>
                             <button onclick="Register() style=" visibility:hidden;>Register</button>
                         }
@@ -86,8 +75,6 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-
-            <div>@Context.Session.GetString("username")</div>
 
             @RenderBody()
         </main>

@@ -2,32 +2,33 @@
 
 
 
-    <h1>Welcome to MyCart</h1>
-    <p>Please Login to continue </p>
+<h1>Welcome to MyCart</h1>
+<p>Please Login to continue </p>
 
 
-    <form action="/Login" method="post">
+<form  action="Login" method="post">
 
-        <table>
-            <tr>
+    <table>
+        <tr>
 
-                <td> @Html.DisplayNameFor(model => model.UserName)</td>
-                <td><input type="text" name="Email" value="" placeholder="Type Email" /></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="Password" value="" placeholder="Type Password" /></td>
-            </tr>
+            <td> @Html.DisplayNameFor(model => model.UserName)</td>
+            <td><input type="text" name="UserName" value="" placeholder="Type UserName" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="Password" value="" placeholder="Type Password" /></td>
+        </tr>
 
-            <tr>
-                <button type="submit">Login</button>
-                <button @Html.ActionLink("Register", "Register", "UserAuth")>Register here </button>
+        <tr>
+            <button class="btn btn-block" type="submit" >Login</button>
+            <button  >Register here </button>
+            <a class="btn btn-danger" asp-action="Register" asp-controller="UserAuth">Register</a>
 
-            </tr>
-        </table>
+        </tr>
+    </table>
 
-       
 
-        @ViewBag.Email=model.UserName
-    
-    </form>
+
+
+
+</form>
