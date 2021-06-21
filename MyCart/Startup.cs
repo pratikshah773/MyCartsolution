@@ -28,7 +28,7 @@ namespace MyCart
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllersWithViews();
+            services.AddControllersWithViews();
            
 
             services.AddDbContextPool<Datacontext>(options => options.UseSqlServer("Server=.; Database=MyCart; Trusted_Connection=True;"));
@@ -50,7 +50,7 @@ namespace MyCart
             services.AddScoped<IUserRepository, UserRepository>();
             //services.AddScoped<Datacontext, Datacontext>();
 
-
+            services.AddHttpContextAccessor();
             
             services.AddControllersWithViews();
         }
@@ -68,10 +68,12 @@ namespace MyCart
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 
             }
-
+           
 
             app.UseSession();
             app.UseStaticFiles();
+            
+            
             
             app.UseRouting();
 

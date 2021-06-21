@@ -14,7 +14,7 @@ namespace MyCart_ClientLayer.Controllers
     public class UserAuth : Controller
     {
         private IUserRepository _userRepository;
-        private readonly Datacontext _datacontext;
+        private  Datacontext _datacontext;
 
         public UserAuth(IUserRepository  userRepository , Datacontext datacontext )
         {
@@ -24,16 +24,16 @@ namespace MyCart_ClientLayer.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-   
 
-            string strUserName = HttpContext.Session.GetString("strUserName");
-           
-           
+
+            string strUserName = HttpContext.Session.GetString("User");
+
+
             if (strUserName != null)
             { return Content("your session is active"); }
             else
 
-            return View();
+                return View();
         }
 
         [HttpPost]

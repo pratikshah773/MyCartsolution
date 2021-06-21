@@ -14,7 +14,7 @@ namespace MyCart_ClientLayer.Controllers
 
         public ProductController( Iproduct  prod)
         {
-            this._prod = prod;
+            _prod = prod;
         }
         // GET: product
         public ActionResult Index()
