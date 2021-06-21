@@ -10,6 +10,16 @@ function login()
 }
 
 
+function Logout()
+{
+
+    console.log("logout function called");
+    window.location = "UserAuth/Logout";
+
+    
+}
+
+
 function Register() {
     console.log("function called");
 

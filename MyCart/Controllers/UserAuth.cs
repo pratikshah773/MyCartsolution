@@ -98,5 +98,22 @@ namespace MyCart_ClientLayer.Controllers
 
             return Content("Registration Successful , Please Login");
         }
+
+
+
+
+        public void Logout()
+        {
+
+            HttpContext.Session.Clear();
+
+        
+        }
+
+
+
+
+
+
     }
 }

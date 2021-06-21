@@ -20,7 +20,7 @@ namespace MyCart_ClientLayer.Controllers
             _datacontext= datacontext ;
 
         }
-        [HttpPost]
+        
         public ActionResult AddtoCart()
         {
 
